@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+  <div class="header">
+    <img class="logo" src="static/earthpic.jpg" alt="logo">
+    <h2 class="header_title"> Travel the World </h2>
+    <button id="">Search Countries</button>
+  </div>
+  {% if error %}
+    <p class="error">Error: please try again.</p>
+  {% endif %}
+
+  <h1>Log in to an existing account</h1>
+
+  <form method="POST" action="login">
+  Username: <input type="text" name="username">
+  Password:  <input type="password" name="password">
+  <input type="submit" value="Login!">
+  </form>
+{% endblock %}

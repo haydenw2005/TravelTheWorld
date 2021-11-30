@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block head %}
+  <script> var wishlist = {{ wishlist|tojson }}; </script>
+{% endblock %}
+{% block body %}
+  <div class="header">
+    <img class="logo" src="static/earthpic.jpg" alt="logo">
+    <h2 class="header_title"> Travel the World</h2>
+    <a class="searchLink" href="search" >Search Countries</a>
+    <a class="logout" href="logout" >Logout</a>
+  </div>
+  <div id="map"></div>
+  <script src="static/functions.js"></script>
+{% endblock %}

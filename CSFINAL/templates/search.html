@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head %}
+  <script src="static/functions.js"></script>
+{% endblock %}
+{% block body %}
+  <div id="searchDiv">
+    <h1>Search a Country</h1
+    <form>
+      <input type="text" id="bar" onkeyup="searchBar()">
+    </form>
+    <p id="display"></p>
+    <ul id="myUL">
+      {% for item in range(names|length) %}
+        <li><a href="info?country={{ names[item] }}">{{ names[item] }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

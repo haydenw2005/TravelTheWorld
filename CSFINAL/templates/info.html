@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block head %}
+  <script src="static/functions.js"></script>
+{% endblock %}
+{% block body %}
+  {% if error == false %}
+    <h1 id="infoTitle">{{ country }}</h1>
+    <img src={{flag}} alt={{flag}}>
+    <h3>Official name: {{ official }}</h3>
+    <h4>Capital: {{ capital }}</h4>
+    <h4>Region: {{ region}}</h4>
+    <h4>Subregion: {{ subregion }}</h4>
+    <h4>Population: {{ pop }}</h4>
+    <h4>Timezone: {{ zone }}</h4>
+    {% if currencies|length >= 2 %}
+      <h4>Currencies:
+      {% for item in range(currencies|length) %}
+        {{ currencies[item] }}
+      {% endfor %}
+      </h4>
+    {% else %}
+      <h4>Currency: {{ currencies[0] }}</h4>
+    {% endif %}
+    {% if languages|length >= 2 %}
+      <h4>Languages:
+      {% for item in range(languages|length) %}
+        {{ languages[item] }}
+      {% endfor %}
+      </h4>
+    {% else %}
+      <h4>Language: {{ languages[0] }}</h4>
+    {% endif %}
+    {% if added == true %}
+      <form method="POST" action="home">
+        Add to travel list: <input type="radio" name="travelList" value="wishlist">
+        <input type="hidden" name="name" value="{{ official }}">
+        <input type="hidden"  name="lat" value="{{ lat }}">
+        <input type="hidden"  name="long" value="{{ long }}">
+        <input type="submit" value="Return Home">
+      </form>
+    {% else %}
+      <h4>This item has been added to wishlist</h4>
+    {% endif %}
+
+  {% else %}
+    <h1> Unknown parameter. Please try again.</h1>
+  {% endif %}
+{% endblock %}

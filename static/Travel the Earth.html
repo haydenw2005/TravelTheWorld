@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost:5000/search -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./Travel the Earth_files/style.css">
+    <link href="./Travel the Earth_files/css" rel="stylesheet">
+    <script src="./Travel the Earth_files/mapbox-gl.js.download"></script>
+    <link href="./Travel the Earth_files/mapbox-gl.css" rel="stylesheet">
+
+    <link rel="icon" href="http://localhost:5000/static/earthpic.jpg">
+    <title> Travel the Earth </title>
+    
+  <script src="./Travel the Earth_files/functions.js.download"></script>
+  <script> var countries = ["Afghanistan", "Sudan", "Burundi", "Mexico", "Cuba", "Serbia", "Monaco", "Bhutan", "Guyana", "South Georgia", "Bosnia and Herzegovina", "Brunei", "Pakistan", "Kenya", "Puerto Rico", "Somalia", "Svalbard and Jan Mayen", "Sierra Leone", "French Polynesia", "Azerbaijan", "Cook Islands", "Peru", "Bouvet Island", "Northern Mariana Islands", "Angola", "Republic of the Congo", "South Sudan", "Saint Martin", "Turkey", "Anguilla", "Saint Kitts and Nevis", "Aruba", "Turks and Caicos Islands", "Taiwan", "Sweden", "Liberia", "Venezuela", "United States Virgin Islands", "Bermuda", "Albania", "Hong Kong", "Luxembourg", "Eritrea", "Colombia", "Caribbean Netherlands", "Mongolia", "Yemen", "Lebanon", "Antigua and Barbuda", "Vietnam", "Palau", "Jersey", "Trinidad and Tobago", "Israel", "Bulgaria", "Portugal", "Gibraltar", "San Marino", "Singapore", "Sint Maarten", "Saudi Arabia", "Ghana", "Moldova", "Chad", "Antarctica", "United Kingdom", "Papua New Guinea", "French Southern and Antarctic Lands", "United States Minor Outlying Islands", "Belize", "Comoros", "Burkina Faso", "Faroe Islands", "Guinea", "India", "Cura\u00e7ao", "Togo", "Tunisia", "Saint Barth\u00e9lemy", "Indonesia", "Micronesia", "Austria", "Tajikistan", "DR Congo", "Mayotte", "R\u00e9union", "Romania", "Qatar", "Lithuania", "China", "New Zealand", "Norfolk Island", "Mauritania", "Uzbekistan", "Finland", "Cameroon", "Heard Island and McDonald Islands", "Dominica", "Iceland", "Oman", "North Macedonia", "Liechtenstein", "Spain", "Greece", "Paraguay", "Bahrain", "Niue", "Senegal", "Montserrat", "Latvia", "Tokelau", "Japan", "Central African Republic", "Gabon", "Iraq", "Isle of Man", "Myanmar", "Montenegro", "Nauru", "Vanuatu", "France", "Zimbabwe", "Philippines", "Slovakia", "Australia", "Ivory Coast", "British Indian Ocean Territory", "Eswatini", "Rwanda", "Benin", "British Virgin Islands", "Uganda", "Ireland", "Iran", "Slovenia", "Mali", "Switzerland", "American Samoa", "Uruguay", "Guam", "Suriname", "Ukraine", "Czechia", "Honduras", "Samoa", "Laos", "Cape Verde", "Ethiopia", "Bangladesh", "Saint Helena, Ascension and Tristan da Cunha", "Belarus", "Croatia", "Kuwait", "French Guiana", "Morocco", "Russia", "Estonia", "Sri Lanka", "New Caledonia", "Poland", "Madagascar", "Costa Rica", "El Salvador", "Macau", "Andorra", "Italy", "Namibia", "Seychelles", "Panama", "Haiti", "Argentina", "Niger", "Malawi", "Pitcairn Islands", "Germany", "Kiribati", "Syria", "Marshall Islands", "Hungary", "Cayman Islands", "Denmark", "Saint Lucia", "Bolivia", "Djibouti", "South Africa", "Nigeria", "S\u00e3o Tom\u00e9 and Pr\u00edncipe", "Nicaragua", "Guadeloupe", "Saint Pierre and Miquelon", "Ecuador", "Greenland", "Grenada", "Bahamas", "Chile", "Malaysia", "Tuvalu", "Christmas Island", "Solomon Islands", "Tanzania", "North Korea", "Guinea-Bissau", "Kosovo", "Vatican City", "Norway", "Palestine", "Cocos (Keeling) Islands", "Jamaica", "Egypt", "Cambodia", "Mauritius", "Gambia", "Equatorial Guinea", "Lesotho", "Martinique", "United States", "Western Sahara", "United Arab Emirates", "Mozambique", "Algeria", "Zambia", "Guatemala", "South Korea", "Kyrgyzstan", "Timor-Leste", "\u00c5land Islands", "Jordan", "Malta", "Cyprus", "Falkland Islands", "Kazakhstan", "Botswana", "Saint Vincent and the Grenadines", "Barbados", "Tonga", "Thailand", "Belgium", "Canada", "Georgia", "Wallis and Futuna", "Fiji", "Netherlands", "Armenia", "Dominican Republic", "Guernsey", "Turkmenistan", "Nepal", "Maldives", "Libya", "Brazil"]; </script>
+
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1039.0" data-gr-ext-installed="">
+    
+  <div id="searchBar">
+    <h1>Search a Country</h1>
+
+      <input type="text" id="myInput" onkeyup="searchBar()" placeholder="Search for names..">
+    
+    <p id="display"></p>
+    <ul id="myUL">
+      
+        <li style=""><a href="http://localhost:5000/home">Afghanistan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Sudan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Burundi</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Mexico</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Cuba</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Serbia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Monaco</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Bhutan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Guyana</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">South Georgia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Bosnia and Herzegovina</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Brunei</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Pakistan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Kenya</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Puerto Rico</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Somalia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Svalbard and Jan Mayen</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Sierra Leone</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">French Polynesia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Azerbaijan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Cook Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Peru</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Bouvet Island</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Northern Mariana Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Angola</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Republic of the Congo</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">South Sudan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Saint Martin</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Turkey</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Anguilla</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Saint Kitts and Nevis</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Aruba</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Turks and Caicos Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Taiwan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Sweden</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Liberia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Venezuela</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">United States Virgin Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Bermuda</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Albania</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Hong Kong</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Luxembourg</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Eritrea</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Colombia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Caribbean Netherlands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Mongolia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Yemen</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Lebanon</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Antigua and Barbuda</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Vietnam</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Palau</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Jersey</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Trinidad and Tobago</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Israel</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Bulgaria</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Portugal</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Gibraltar</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">San Marino</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Singapore</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Sint Maarten</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Saudi Arabia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Ghana</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Moldova</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Chad</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Antarctica</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">United Kingdom</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Papua New Guinea</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">French Southern and Antarctic Lands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">United States Minor Outlying Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Belize</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Comoros</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Burkina Faso</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Faroe Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Guinea</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">India</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Curaçao</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Togo</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Tunisia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Saint Barthélemy</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Indonesia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Micronesia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Austria</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Tajikistan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">DR Congo</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Mayotte</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Réunion</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Romania</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Qatar</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Lithuania</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">China</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">New Zealand</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Norfolk Island</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Mauritania</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Uzbekistan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Finland</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Cameroon</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Heard Island and McDonald Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Dominica</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Iceland</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Oman</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">North Macedonia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Liechtenstein</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Spain</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Greece</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Paraguay</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Bahrain</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Niue</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Senegal</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Montserrat</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Latvia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Tokelau</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Japan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Central African Republic</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Gabon</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Iraq</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Isle of Man</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Myanmar</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Montenegro</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Nauru</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Vanuatu</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">France</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Zimbabwe</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Philippines</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Slovakia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Australia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Ivory Coast</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">British Indian Ocean Territory</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Eswatini</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Rwanda</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Benin</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">British Virgin Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Uganda</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Ireland</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Iran</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Slovenia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Mali</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Switzerland</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">American Samoa</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Uruguay</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Guam</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Suriname</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Ukraine</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Czechia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Honduras</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Samoa</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Laos</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Cape Verde</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Ethiopia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Bangladesh</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Saint Helena, Ascension and Tristan da Cunha</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Belarus</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Croatia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Kuwait</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">French Guiana</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Morocco</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Russia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Estonia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Sri Lanka</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">New Caledonia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Poland</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Madagascar</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Costa Rica</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">El Salvador</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Macau</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Andorra</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Italy</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Namibia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Seychelles</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Panama</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Haiti</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Argentina</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Niger</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Malawi</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Pitcairn Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Germany</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Kiribati</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Syria</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Marshall Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Hungary</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Cayman Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Denmark</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Saint Lucia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Bolivia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Djibouti</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">South Africa</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Nigeria</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">São Tomé and Príncipe</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Nicaragua</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Guadeloupe</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Saint Pierre and Miquelon</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Ecuador</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Greenland</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Grenada</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Bahamas</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Chile</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Malaysia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Tuvalu</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Christmas Island</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Solomon Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Tanzania</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">North Korea</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Guinea-Bissau</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Kosovo</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Vatican City</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Norway</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Palestine</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Cocos (Keeling) Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Jamaica</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Egypt</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Cambodia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Mauritius</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Gambia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Equatorial Guinea</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Lesotho</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Martinique</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">United States</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Western Sahara</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">United Arab Emirates</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Mozambique</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Algeria</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Zambia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Guatemala</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">South Korea</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Kyrgyzstan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Timor-Leste</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Åland Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Jordan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Malta</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Cyprus</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Falkland Islands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Kazakhstan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Botswana</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Saint Vincent and the Grenadines</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Barbados</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Tonga</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Thailand</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Belgium</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Canada</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Georgia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Wallis and Futuna</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Fiji</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Netherlands</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Armenia</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Dominican Republic</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Guernsey</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Turkmenistan</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Nepal</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Maldives</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Libya</a></li>
+      
+        <li style=""><a href="http://localhost:5000/home">Brazil</a></li>
+      
+    </ul>
+  </div>
+
+  
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

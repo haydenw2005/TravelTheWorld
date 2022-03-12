@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+
+  <div class="ttwTitle">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+            <feGaussianBlur stdDeviation="60 0"></feGaussianBlur>
+        </filter>
+    </svg>
+  </div>
+  <!---- This will throw an error, however, it is needed to make text look cool.-->
+  <span id="logInHeader" filter-content=" L">Log in</span>
+
+  <div class="introPage">
+    {% if error %}
+      <p class="error">Error: please try again.</p>
+    {% endif %}
+
+
+    <form method="POST" action="login">
+      <br/><br/>
+    <input class="inputBars" type="text" name="username" placeholder="Username" required>
+    <br/><br/>
+    <input class="inputBars" type="password" name="password" placeholder="Password" required>
+    <br/><br/>
+    <input class="inputBars" type="submit" value="Login">
+    </form>
+  </div>
+{% endblock %}

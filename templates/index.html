@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block body %}
+
+  <div class="ttwTitle">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+            <feGaussianBlur stdDeviation="60 0"></feGaussianBlur>
+        </filter>
+    </svg>
+  </div>
+
+<!---- This will throw an error, however, it is needed to make text look cool.-->
+  <span filter-content=" T">Travel the World</span>
+  <div class="introPage">
+    {% if username %}
+      <a href="logout">Log out</a>
+    {% else %}
+      <h1 class="hoverLink"><a href="signup">Sign up for a new account</a></h1>
+      <br/><br/>
+      <h1 class="hoverLink"><a href="login">Log in with an existing account</a></h1>
+    {% endif %}
+  </div>
+
+{% endblock %}

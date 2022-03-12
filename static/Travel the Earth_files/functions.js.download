@@ -1,0 +1,93 @@
+function displayInput() {
+	var userInput = document.getElementById("searchSumbit").value;
+	let wasFound = false;
+	countries.forEach(function(item, index, array) {
+  	console.log(item, index, userInput)
+		if (item == userInput)  {
+			wasFound = true;
+		}
+	})
+	if (wasFound == true)  {
+		document.getElementById('display').innerHTML = userInput;
+	} else {
+		document.getElementById('display').innerHTML = "error";
+	}
+
+}
+
+function searchBar() {
+	var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiaGF5ZGVuc3doaXRlIiwiYSI6ImNrdnVlZHd1aDJnenUybm1vY294dWd1dHEifQ.mdc8TfrMvuyyjsIRwKd-0A';
+
+const geojson = {
+	'type': 'FeatureCollection',
+	'features': [
+		{
+			'type': 'Feature',
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [-77.032, 38.913]
+			},
+			'properties': {
+				'title': 'Mapbox',
+				'description': 'Washington, D.C.'
+			}
+		},
+		{
+			'type': 'Feature',
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [-122.414, 37.776]
+			},
+			'properties': {
+				'title': 'Mapbox',
+				'description': 'San Francisco, California'
+			}
+		},
+		{
+			'type': 'Feature',
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [45, 45]
+			},
+			'properties': {
+				'title': 'Mapbox',
+				'description': 'Joe, Mama'
+			}
+		}
+	]
+};
+
+const map = new mapboxgl.Map({
+	container: 'map',
+	style: 'mapbox://styles/haydenswhite/ckvueyyaa2x3415msm16ouc8c',
+	center: [-1.83762741088867,33.179770125276974],
+	zoom: 1.12
+});
+
+// add markers to map
+for (const feature of geojson.features) {
+	// create a HTML element for each feature
+	const el = document.createElement('div');
+	el.className = 'marker';
+
+	// make a marker for each feature and add it to the map // add popups
+	new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`)).addTo(map);
+}

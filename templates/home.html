@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block head %}
+  <script> var wishlist = {{ wishlist|tojson }}; </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock %}
+{% block body %}
+  <div class="ttwTitle">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+            <feGaussianBlur stdDeviation="40 0"></feGaussianBlur>
+        </filter>
+    </svg>
+  </div>
+  <div id="home">
+    <div id="map"></div>
+    <div class="header">
+      <div class="container1">
+        <img id="searchButton" class="smallButton" src="static/search.png" alt="search">
+      </div>
+      <div class="container2">
+        <!---- This will throw an error, however, it is needed to make text look cool.-->
+        <span id="mainHomeHeader" filter-content=" S">Travel the</span>
+        <!---- This will throw an error, however, it is needed to make text look cool.-->
+        <span id="mainHomeHeaderWorld" filter-content=" S">World</span>
+      </div>
+      <div class="container3">
+        <img id="settingButton" class="smallButton" src="static/settings.png" alt="settings">
+      </div>
+  </div>
+    </div>
+    <div id="map_dropdown">
+      <h3 class="centered_text"> Tutorial </h3>
+    </div>
+
+    <div id="searchMenu">
+      <div>
+        <h1 id="searchMenuHeader" >Search a Country</h1>
+        <div id="countryInfo">
+          <h3 id="official" hidden >Official name: </h3>
+          <h4 id="capital" hidden>Capital: </h4>
+          <h4 id="region" hidden>Region: </h4>
+          <h4 id="subregion" hidden>Subregion: </h4>
+          <h4 id="population" hidden>Population: </h4>
+          <h4 id="timezone" hidden>Timezone: </h4>
+          <img id="flag" src="ds" alt="flag" hidden>
+          <img id="addButton" class="smallButton" src="static/add.jpeg" alt="add" hidden>
+          <img id="searchExitButton" class="smallButton" src="static/exit.jpeg" alt="exit" hidden>
+        </div>
+        <form id="search" onkeydown="return event.key != 'Enter';">
+          <input type="text" id="bar" onkeyup="searchBar()" autocomplete="off">
+        </form>
+        <ul id="myUL">
+          {% for item in range(names|length) %}
+            <li><button class="searchItem" value="{{ names[item] }}">{{ names[item] }}</button></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+<!-- -->
+
+    <div id="settingMenu">
+      <div>
+        <h1 id="settingHeader" >Settings</h1>
+        <h2 id="logoutLink"><a href="logout">Logout</a></h2>
+        <h2 id="deleteCountriesHeader">Delete Countries</h2>
+        <div id="listContainer">
+          <ul id="listParent">
+            <li id="hiddenMessage" hidden>You have no countries on your list.</li>
+            {% for item in range(names|length) %}
+              <li class="deleteCountryItem" hidden>{{ names[item] }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <img id="deleteButton" class="smallButton" src="static/delete.jpeg" alt="delete" hidden>
+        <img id="settingsExitButton" class="smallButton" src="static/exit.jpeg" alt="exit" hidden>
+      </div>
+    </div>
+
+    <div id="informationMenu">
+        <h1 id="tutorial" >Tutorial</h1>
+        <h5 id="tutP">Welcome to Travel the World. The purpose of this website is to search and add countries to your wishlist, which will show up on your account's map. To add a country, click the search button on the left side of the navbar. Use the search bar to filter countries by letter. Click on a country and you will be directed to a page with facts and a button that gives the option to add it to your wishlist. To delete countries, click on the settings button on the right of the navbar then click "Delete Countries." Simply click the country's name to add it to the delete list, then when ready, press the trash button to delete all selected countries. Thanks for visiting! </h5>
+    </div>
+  <script src="static/functions.js"></script>
+{% endblock %}

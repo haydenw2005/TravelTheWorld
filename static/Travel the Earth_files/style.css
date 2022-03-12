@@ -1,0 +1,146 @@
+body
+{
+	font-family: Arial;
+	background-color: #EEE;
+	width: 700px;
+	margin: auto;
+	padding: 10px;
+}
+
+h1
+{
+	font-family: Verdana;
+}
+
+button
+{
+	margin-top:40px;
+	color: white;
+	background-color: #00aabb;
+	display: block;
+}
+
+p, button, input {
+	font-size: 25px;
+}
+
+input {
+	margin-top: 10px;
+	width: 600px;
+	text-align: center;
+}
+.header {
+	background-color: #32a852;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 10%;
+}
+
+.logo {
+	position: absolute;
+	top: 3%;
+	left: .3%;
+	width: 4.5%;
+	height: 90%;
+}
+
+.header_title {
+	position: absolute;
+	top: 3%;
+	left: 6%;
+	color: #ffffff;
+}
+
+#title {
+  text-align: center;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#map {
+	position: absolute;
+	top: 52%;
+	left: 50%;
+	width: 80%;
+	height: 80%;
+	transform: translate(-50%, -50%);
+}
+
+.marker {
+	background-image: url('mapbox_icon.png');
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.mapboxgl-popup {
+	max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.searchLink{
+	position: absolute;
+	top: 70%;
+	left: 60%;
+	width: 80%;
+	height: 80%;
+	transform: translate(-50%, -50%);
+}
+
+#searchSumbit {
+	color: blue;
+}
+
+#display {
+	color: red;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+#searchBar {
+	color: black;
+	text-align: center;
+
+}
